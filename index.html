@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Networking Demo</title>
+  </head>
+  <body>
+    <script>
+      const apiUrl = "https://reqres.in/api/users";
+
+      const fetchUsers = async () => {
+        // let response = await fetch(apiUrl);
+        // let data = await response.json;
+        return await (await fetch(apiUrl)).json()
+      };
+      fetchUsers().then((data) => {
+        users = data.data;
+        console.table(users);
+      });
+      // fetch(apiUrl)
+      //   .then((response) => {
+      //     return response.json();
+      //   })
+      //   .then((data) => {
+      //     users = data.data
+
+      //     debugger
+      //   });
+
+      // const xhr = new XMLHttpRequest();
+      // let data
+      // xhr.open("GET", apiUrl);
+      // xhr.addEventListener("load", () => {
+      //   data = JSON.parse(xhr.responseText)
+      //   debugger;
+      // });
+      // xhr.send();
+    </script>
+  </body>
+</html>
